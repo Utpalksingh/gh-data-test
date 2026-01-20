@@ -30,10 +30,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: |
-            dist/
-            !**/*Zone.Identifier
-            package.json
+          path: dist
+      
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -42,7 +40,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
-          
+
       - name: List files
         run: ls -la
       - name: Deploy
