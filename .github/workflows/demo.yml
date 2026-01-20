@@ -32,6 +32,7 @@ jobs:
           name: build-artifacts
           path: |
             dist/
+            !**/*Zone.Identifier
             package.json
   deploy:
     needs: build
