@@ -30,7 +30,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: dist
+          path: |
+            dist/
+            !**/vite.svg:Zone.Identifier
       
   deploy:
     needs: build
